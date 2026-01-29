@@ -1,0 +1,20 @@
+{
+  "last_updated": "2026-01-25T00:55:38.714915",
+  "preferences": [
+    "优先使用 python3 -m yt_dlp 而不是 yt-dlp 命令",
+    "下载哔哩哔哩视频时优先使用 HEVC 格式（30077）",
+    "使用国内镜像（清华大学）加速 pip 安装"
+  ],
+  "fixes": [
+    "yt-dlp 命令未找到时，自动尝试 python3 -m yt_dlp",
+    "ffmpeg 未安装时，自动搜索系统常见位置（如 BambuStudio）",
+    "哔哩哔哩 1080P+ 下载失败时，提示使用 --cookies-from-browser",
+    "macOS 13 Homebrew 安装失败时，查找系统已有 ffmpeg"
+  ],
+  "contexts": [
+    "用户反馈：视频和音频被下载为两个文件，需要手动合并",
+    "用户反馈：不知道如何下载哔哩哔哩的高清视频",
+    "用户反馈：yt-dlp 已安装但系统找不到"
+  ],
+  "custom_prompts": "# yt-dlp 使用提示\n\n## 调用方式\n- 优先使用: python3 -m yt_dlp\n- 备用: yt-dlp\n\n## ffmpeg 检测\n- PATH 搜索\n- BambuStudio: ~/Library/Application Support/BambuStudio/cameratools/ffmpeg\n- Homebrew: /usr/local/bin/ffmpeg 或 /opt/homebrew/bin/ffmpeg\n\n## 哔哩哔哩格式\n- 30077: 1080P HEVC（推荐）\n- 30080: 1080P AVC\n- 100026: 1080P AV1\n\n## 安装命令\npip3 install --user -i https://pypi.tuna.tsinghua.edu.cn/simple yt-dlp"
+}
